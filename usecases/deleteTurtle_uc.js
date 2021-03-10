@@ -1,5 +1,6 @@
 // const repo = require('../repositories/json_repo');
-const repo = require('../repositories/mysql_repo');
+// const repo = require('../repositories/mysql_repo');
+const repo = require('../repositories/mongo_repo');
 
 const createError = require('http-errors');
 

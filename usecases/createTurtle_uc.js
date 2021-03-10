@@ -1,5 +1,6 @@
 // const json_repo = require('../repositories/json_repo');
-const repo = require('../repositories/mysql_repo');
+// const repo = require('../repositories/mysql_repo');
+const repo = require('../repositories/mongo_repo');
 
 const createError = require('http-errors');
 
@@ -11,6 +12,7 @@ const handle = async (validatedTurtle) => {
 
   if (!existTurtle) {
     const newTurtle = new Turtle(Date.now(), name, speed, age, weightKg);
+
     return await repo.insert(newTurtle);
   } else {
     throw createError(409, 'The turtle already exists!');
